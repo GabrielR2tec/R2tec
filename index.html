@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R2TEC — Tecnologia, Infraestrutura e Equipamentos de Informática</title>
+<meta name="description" content="R2TEC: tecnologia, prestação de serviços e venda/locação de equipamentos de informática e infraestrutura para empresas.">
+<link rel="icon" href="images/logo/r2tec-logo-dark-bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="images/logo/r2tec-logo-dark-bg.jpg" alt="R2TEC — Inovação e Tecnologia">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="active">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="#" class="btn btn-primary btn-sm nav-cta" data-quote-trigger>Solicitar orçamento</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="icon-btn" data-cart-open aria-label="Abrir orçamento">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 3H2"/></svg>
+        <span class="cart-count" data-empty="true">0</span>
+      </button>
+      <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="document.getElementById('mainNav').classList.toggle('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="eyebrow">R2TEC · Inovação e Tecnologia</div>
+      <h1>Soluções em <em>tecnologia</em> para o crescimento do seu negócio.</h1>
+      <p class="hero-lead">A R2TEC atua com tecnologia, prestação de serviços e venda/locação de equipamentos de informática e infraestrutura — para que sua empresa opere com mais eficiência, segurança e desempenho.</p>
+      <div class="hero-actions">
+        <a href="servicos.html" class="btn btn-primary">Conheça nossos serviços</a>
+        <a href="produtos.html" class="btn btn-outline">Ver produtos</a>
+        <a href="#" class="btn btn-outline" data-quote-trigger>Solicitar orçamento</a>
+      </div>
+    </div>
+    <div class="container hero-meta">
+      <div><strong>Venda</strong><span>Equipamentos de TI</span></div>
+      <div><strong>Locação</strong><span>Infraestrutura sob demanda</span></div>
+      <div><strong>Suporte</strong><span>Técnico especializado</span></div>
+      <div><strong>Redes</strong><span>Projeto e manutenção</span></div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS EM DESTAQUE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" style="justify-content:center">O que fazemos</div>
+        <h2>Serviços em destaque</h2>
+      </div>
+      <div class="rail rail--center"></div>
+
+      <div class="grid grid-4" id="homeServicesGrid">
+        <!-- preenchido estaticamente abaixo -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS EM DESTAQUE -->
+  <section class="section section--paper">
+    <div class="container">
+      <div class="destaques-head">
+        <div>
+          <div class="eyebrow">Catálogo</div>
+          <h2 class="mt-0">Produtos em destaque</h2>
+        </div>
+        <a href="produtos.html" class="btn btn-outline">Ver catálogo completo</a>
+      </div>
+      <div class="rail"></div>
+
+      <div class="grid grid-4" id="homeProductsGrid" data-catalog-error-target>
+        <p style="grid-column:1/-1;color:var(--muted)">Carregando produtos…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ORÇAMENTO -->
+  <section class="cta-band">
+    <div class="container">
+      <div>
+        <h2>Precisa de uma solução personalizada?</h2>
+        <p>Fale com nossa equipe e solicite um orçamento sob medida para a sua empresa.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="#" class="btn btn-primary" data-quote-trigger>Solicitar orçamento</a>
+        <a href="contato.html" class="btn btn-outline">Fale conosco</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer"></footer>
+<div id="waFab"></div>
+
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/main.js"></script>
+<script src="js/footer.js"></script>
+<script>
+  // Serviços em destaque (dados fixos do site institucional — ver servicos.html para lista completa)
+  const homeServicos = [
+    { icon: 'headset', nome: 'Suporte técnico', desc: 'Atendimento ágil para resolver problemas e manter sua operação funcionando.' },
+    { icon: 'server', nome: 'Infraestrutura de TI', desc: 'Planejamento e montagem de infraestrutura sob medida para sua empresa.' },
+    { icon: 'network', nome: 'Redes', desc: 'Projeto, instalação e manutenção de redes cabeadas e sem fio.' },
+    { icon: 'shield', nome: 'Segurança', desc: 'Proteção de dados, equipamentos e ambientes de rede corporativos.' },
+  ];
+  const icons = {
+    headset: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>',
+    server: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="7" rx="1"/><rect x="2" y="14" width="20" height="7" rx="1"/><path d="M6 6.5h.01M6 17.5h.01"/></svg>',
+    network: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="4" r="2"/><circle cx="5" cy="20" r="2"/><circle cx="19" cy="20" r="2"/><path d="M12 6v6M12 12L6 18M12 12l6 6"/></svg>',
+    shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 3v6c0 5-3.5 7.8-8 9-4.5-1.2-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+  };
+  document.getElementById('homeServicesGrid').innerHTML = homeServicos.map(s => `
+    <div class="card service-card">
+      <div class="service-icon">${icons[s.icon]}</div>
+      <h3>${s.nome}</h3>
+      <p>${s.desc}</p>
+      <a href="servicos.html" class="btn-ghost">Saiba mais
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>`).join('');
+
+  // Produtos em destaque — primeiros produtos ativos do catálogo
+  R2Catalog.load().then(produtos => {
+    const grid = document.getElementById('homeProductsGrid');
+    R2Catalog.renderGrid(grid, produtos.slice(0, 4));
+  });
+</script>
+</body>
+</html>

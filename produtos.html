@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produtos — R2TEC</title>
+<meta name="description" content="Catálogo de equipamentos de informática e infraestrutura da R2TEC: computadores, servidores, redes, monitores e mais. Venda e locação.">
+<link rel="icon" href="images/logo/r2tec-logo-dark-bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="images/logo/r2tec-logo-dark-bg.jpg" alt="R2TEC — Inovação e Tecnologia">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="produtos.html" class="active">Produtos</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="#" class="btn btn-primary btn-sm nav-cta" data-quote-trigger>Solicitar orçamento</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="icon-btn" data-cart-open aria-label="Abrir orçamento">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 3H2"/></svg>
+        <span class="cart-count" data-empty="true">0</span>
+      </button>
+      <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="document.getElementById('mainNav').classList.toggle('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Produtos</div>
+      <h1>Catálogo de produtos</h1>
+      <p>Equipamentos de informática e infraestrutura disponíveis para venda e locação. Filtre por categoria ou pesquise pelo nome do produto.</p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+
+      <div class="search-row">
+        <div class="search-input">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <input type="text" id="searchInput" placeholder="Pesquisar produto...">
+        </div>
+        <select id="sortSelect" class="sort-select" aria-label="Ordenar produtos">
+          <option value="relevancia">Ordenar por relevância</option>
+          <option value="az">Nome A–Z</option>
+          <option value="za">Nome Z–A</option>
+        </select>
+      </div>
+
+      <div class="catalog-layout">
+        <aside class="filters">
+          <h4>Filtrar produtos</h4>
+          <form id="filtersForm">
+            <div class="filter-group">
+              <h4>Categoria</h4>
+              <div id="categoriaOptions"></div>
+            </div>
+            <div class="filter-group">
+              <h4>Subcategoria</h4>
+              <div id="subcategoriaOptions"></div>
+            </div>
+            <div class="filter-group">
+              <h4>Disponibilidade</h4>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="venda"> Venda
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="locacao"> Locação
+              </label>
+            </div>
+          </form>
+          <button type="button" id="clearFilters" class="btn btn-outline btn-sm btn-block">Limpar filtros</button>
+        </aside>
+
+        <div>
+          <div class="results-bar">
+            <span class="results-count" id="resultsCount">Carregando…</span>
+          </div>
+          <div class="active-chips" id="activeChips"></div>
+          <div class="grid grid-3" id="productsGrid" data-catalog-error-target></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div>
+        <h2>Não encontrou o que precisa?</h2>
+        <p>Nossa equipe pode indicar o equipamento certo para o seu projeto.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="#" class="btn btn-primary" data-quote-trigger>Solicitar orçamento</a>
+        <a href="contato.html" class="btn btn-outline">Fale conosco</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="footer"></footer>
+<div id="waFab"></div>
+
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/main.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/produtos-page.js"></script>
+</body>
+</html>

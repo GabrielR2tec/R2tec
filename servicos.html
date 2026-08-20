@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serviços — R2TEC</title>
+<meta name="description" content="Conheça os serviços de tecnologia da R2TEC: suporte técnico, infraestrutura de TI, redes, manutenção, servidores, segurança e consultoria.">
+<link rel="icon" href="images/logo/r2tec-logo-dark-bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="images/logo/r2tec-logo-dark-bg.jpg" alt="R2TEC — Inovação e Tecnologia">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="servicos.html" class="active">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="#" class="btn btn-primary btn-sm nav-cta" data-quote-trigger>Solicitar orçamento</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="icon-btn" data-cart-open aria-label="Abrir orçamento">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 3H2"/></svg>
+        <span class="cart-count" data-empty="true">0</span>
+      </button>
+      <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="document.getElementById('mainNav').classList.toggle('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Serviços</div>
+      <h1>Serviços R2TEC</h1>
+      <p>Suporte técnico, infraestrutura e consultoria para manter a tecnologia da sua empresa funcionando com estabilidade e segurança.</p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <div id="servicesList"></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div>
+        <h2>Vamos conversar sobre o seu projeto?</h2>
+        <p>Conte com a R2TEC para planejar e executar a solução ideal para sua empresa.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="#" class="btn btn-primary" data-quote-trigger>Solicitar orçamento</a>
+        <a href="contato.html" class="btn btn-outline">Fale conosco</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="footer"></footer>
+<div id="waFab"></div>
+
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/main.js"></script>
+<script src="js/footer.js"></script>
+<script>
+const icons = {
+  headset: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>',
+  server: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="7" rx="1"/><rect x="2" y="14" width="20" height="7" rx="1"/><path d="M6 6.5h.01M6 17.5h.01"/></svg>',
+  network: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="4" r="2"/><circle cx="5" cy="20" r="2"/><circle cx="19" cy="20" r="2"/><path d="M12 6v6M12 12L6 18M12 12l6 6"/></svg>',
+  wrench: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.3 2.3-2-2z"/></svg>',
+  serverStack: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="6" rx="1"/><rect x="2" y="9" width="20" height="6" rx="1"/><rect x="2" y="16" width="20" height="6" rx="1"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 3v6c0 5-3.5 7.8-8 9-4.5-1.2-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+  chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>',
+  building: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 22V4a1 1 0 011-1h10a1 1 0 011 1v18"/><path d="M9 22v-4h6v4M9 8h.01M12 8h.01M15 8h.01M9 12h.01M12 12h.01M15 12h.01"/></svg>',
+};
+
+const servicos = [
+  {
+    icon: 'headset',
+    nome: 'Suporte técnico',
+    desc: 'Atendimento para diagnóstico e resolução de problemas em computadores, redes e sistemas, mantendo a operação da sua empresa funcionando.',
+    itens: ['Atendimento remoto e presencial', 'Diagnóstico de falhas de hardware e software', 'Acompanhamento até a resolução do chamado'],
+  },
+  {
+    icon: 'server',
+    nome: 'Infraestrutura de TI',
+    desc: 'Planejamento, montagem e gestão da infraestrutura tecnológica da empresa, da sala de servidores às estações de trabalho.',
+    itens: ['Levantamento de necessidades e projeto', 'Instalação e configuração de equipamentos', 'Documentação do ambiente de TI'],
+  },
+  {
+    icon: 'network',
+    nome: 'Redes',
+    desc: 'Projeto, instalação e manutenção de redes cabeadas e sem fio, com foco em estabilidade e desempenho.',
+    itens: ['Cabeamento estruturado', 'Configuração de switches, roteadores e Wi-Fi corporativo', 'Manutenção preventiva e corretiva'],
+  },
+  {
+    icon: 'wrench',
+    nome: 'Manutenção de computadores',
+    desc: 'Manutenção preventiva e corretiva de desktops e notebooks, prolongando a vida útil dos equipamentos.',
+    itens: ['Limpeza e manutenção física', 'Atualização e otimização de sistema', 'Substituição de peças e componentes'],
+  },
+  {
+    icon: 'serverStack',
+    nome: 'Servidores',
+    desc: 'Implantação, configuração e suporte a servidores para armazenamento, aplicações e gerenciamento de rede corporativa.',
+    itens: ['Instalação e configuração de servidores', 'Backup e recuperação de dados', 'Monitoramento e manutenção'],
+  },
+  {
+    icon: 'shield',
+    nome: 'Segurança',
+    desc: 'Medidas de proteção para equipamentos, redes e dados corporativos contra acessos indevidos e falhas.',
+    itens: ['Configuração de firewalls e antivírus', 'Políticas de acesso e backup', 'Boas práticas de segurança da informação'],
+  },
+  {
+    icon: 'chat',
+    nome: 'Consultoria em tecnologia',
+    desc: 'Orientação técnica para apoiar decisões de investimento e planejamento tecnológico da sua empresa.',
+    itens: ['Diagnóstico do ambiente atual', 'Recomendação de equipamentos e soluções', 'Planejamento de médio e longo prazo'],
+  },
+  {
+    icon: 'building',
+    nome: 'Soluções corporativas',
+    desc: 'Projetos sob medida que combinam equipamentos, serviços e suporte para atender às necessidades específicas de cada empresa.',
+    itens: ['Venda e locação combinadas ao suporte técnico', 'Atendimento a projetos de médio e grande porte', 'Acompanhamento próximo da equipe R2TEC'],
+  },
+];
+
+document.getElementById('servicesList').innerHTML = servicos.map(s => `
+  <div class="service-detail">
+    <div class="service-icon">${icons[s.icon]}</div>
+    <div>
+      <h3>${s.nome}</h3>
+      <p>${s.desc}</p>
+      <ul>${s.itens.map(i => `<li>${i}</li>`).join('')}</ul>
+    </div>
+  </div>
+`).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato — R2TEC</title>
+<meta name="description" content="Fale com a R2TEC: solicite orçamento, tire dúvidas sobre produtos e serviços de tecnologia e infraestrutura.">
+<link rel="icon" href="images/logo/r2tec-logo-dark-bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="images/logo/r2tec-logo-dark-bg.jpg" alt="R2TEC — Inovação e Tecnologia">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html" class="active">Contato</a>
+      <a href="#" class="btn btn-primary btn-sm nav-cta" data-quote-trigger>Solicitar orçamento</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="icon-btn" data-cart-open aria-label="Abrir orçamento">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 3H2"/></svg>
+        <span class="cart-count" data-empty="true">0</span>
+      </button>
+      <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="document.getElementById('mainNav').classList.toggle('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Contato</div>
+      <h1>Fale com a gente</h1>
+      <p>Tire dúvidas sobre produtos, serviços ou solicite um orçamento. Nossa equipe responde pelos canais abaixo.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+      <div>
+        <div class="eyebrow">Canais de atendimento</div>
+        <h2>Informações de contato</h2>
+
+        <div class="contact-info-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L7.9 9.9a16 16 0 006 6l1.4-1.3a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.9 2.2z"/></svg>
+          </div>
+          <div>
+            <h4>Telefone / WhatsApp</h4>
+            <p><a href="#" id="contactWaLink">(85) 0 0000-0000</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+          </div>
+          <div>
+            <h4>E-mail</h4>
+            <p><a href="mailto:contato@r2tec.com.br">contato@r2tec.com.br</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </div>
+          <div>
+            <h4>Instagram</h4>
+            <p><a href="https://www.instagram.com/r2technologie/" target="_blank" rel="noopener">@r2technologie</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <h4>Horário de atendimento</h4>
+            <p>Segunda a sexta, 8h às 18h.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">Envie uma mensagem</div>
+        <h2>Solicite um orçamento ou tire dúvidas</h2>
+        <p>Preencha o formulário abaixo — sua mensagem será enviada diretamente para o nosso WhatsApp.</p>
+        <form id="contactForm">
+          <div class="field-row">
+            <div class="field">
+              <label for="cNome">Nome <span class="req">*</span></label>
+              <input type="text" id="cNome" name="nome" required>
+            </div>
+            <div class="field">
+              <label for="cEmpresa">Empresa</label>
+              <input type="text" id="cEmpresa" name="empresa">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="cEmail">E-mail <span class="req">*</span></label>
+              <input type="email" id="cEmail" name="email" required>
+            </div>
+            <div class="field">
+              <label for="cTelefone">Telefone / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="cTelefone" name="telefone" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cMsg">Mensagem <span class="req">*</span></label>
+            <textarea id="cMsg" name="mensagem" rows="4" required placeholder="Conte um pouco sobre o que você precisa..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Enviar mensagem via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="footer"></footer>
+<div id="waFab"></div>
+
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/main.js"></script>
+<script src="js/footer.js"></script>
+<script>
+  document.getElementById('contactWaLink').href =
+    `https://wa.me/${window.R2_WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá, gostaria de falar com a R2TEC.')}`;
+
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!this.checkValidity()) { this.reportValidity(); return; }
+    const data = Object.fromEntries(new FormData(this).entries());
+    let msg = `Olá, meu nome é ${data.nome}`;
+    if (data.empresa) msg += ` (${data.empresa})`;
+    msg += `.\n\n${data.mensagem}\n\nE-mail: ${data.email}\nTelefone: ${data.telefone}`;
+    const url = `https://wa.me/${window.R2_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  });
+</script>
+</body>
+</html>

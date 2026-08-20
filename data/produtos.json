@@ -1,0 +1,108 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Notebook Dell Latitude",
+      "categoria": {
+        "nome": "Computadores",
+        "subcategoria": "Notebooks"
+      },
+      "detalhes": "Notebook corporativo com processador Intel Core i7, 16 GB de RAM e SSD de 512 GB. Ideal para ambientes de trabalho que exigem mobilidade e desempenho.",
+      "imagem": "images/produtos/Balanca.png",
+      "ativo": true,
+      "venda": true,
+      "locacao": true
+    },
+    {
+      "id": 2,
+      "nome": "Monitor Dell 24\"",
+      "categoria": {
+        "nome": "Monitores",
+        "subcategoria": "Monitores LED"
+      },
+      "detalhes": "Monitor de 24 polegadas com resolução Full HD, ideal para ambientes corporativos e estações de trabalho multitarefa.",
+      "imagem": "images/produtos/ponto.png",
+      "ativo": true,
+      "venda": true,
+      "locacao": false
+    },
+    {
+      "id": 3,
+      "nome": "Servidor HP ProLiant",
+      "categoria": {
+        "nome": "Servidores",
+        "subcategoria": "Servidores Rack"
+      },
+      "detalhes": "Servidor para aplicações corporativas, armazenamento e gerenciamento de redes, com suporte a virtualização e alta disponibilidade.",
+      "imagem": "images/produtos/servidor-hp-proliant.jpg",
+      "ativo": true,
+      "venda": true,
+      "locacao": true
+    },
+    {
+      "id": 4,
+      "nome": "Impressora HP LaserJet",
+      "categoria": {
+        "nome": "Impressoras",
+        "subcategoria": "Impressoras Laser"
+      },
+      "detalhes": "Impressora laser monocromática para ambientes corporativos.",
+      "imagem": "images/produtos/impressora-hp-laserjet.jpg",
+      "ativo": false,
+      "venda": true,
+      "locacao": false
+    },
+    {
+      "id": 5,
+      "nome": "Switch Gerenciável 24 Portas",
+      "categoria": {
+        "nome": "Redes",
+        "subcategoria": "Switches"
+      },
+      "detalhes": "Switch gerenciável de 24 portas Gigabit, indicado para infraestrutura de redes corporativas e ambientes que exigem segmentação de tráfego.",
+      "imagem": "images/produtos/switch-24-portas.jpg",
+      "ativo": true,
+      "venda": true,
+      "locacao": false
+    },
+    {
+      "id": 6,
+      "nome": "Roteador Corporativo Wi-Fi 6",
+      "categoria": {
+        "nome": "Redes",
+        "subcategoria": "Roteadores"
+      },
+      "detalhes": "Roteador corporativo com suporte a Wi-Fi 6, indicado para ambientes com alta densidade de dispositivos conectados.",
+      "imagem": "images/produtos/roteador-wifi6.jpg",
+      "ativo": true,
+      "venda": true,
+      "locacao": true
+    },
+    {
+      "id": 7,
+      "nome": "Desktop Corporativo i5",
+      "categoria": {
+        "nome": "Computadores",
+        "subcategoria": "Desktops"
+      },
+      "detalhes": "Computador desktop corporativo com processador Intel Core i5, 8 GB de RAM e SSD de 256 GB, indicado para uso administrativo.",
+      "imagem": "images/produtos/desktop-i5.jpg",
+      "ativo": true,
+      "venda": true,
+      "locacao": true
+    },
+    {
+      "id": 8,
+      "nome": "Nobreak Interativo 1500VA",
+      "categoria": {
+        "nome": "Acessórios",
+        "subcategoria": "Energia"
+      },
+      "detalhes": "Nobreak interativo de 1500VA, proteção essencial para servidores, computadores e equipamentos de rede contra oscilações de energia.",
+      "imagem": "images/produtos/nobreak-1500va.jpg",
+      "ativo": true,
+      "venda": true,
+      "locacao": false
+    }
+  ]
+}
