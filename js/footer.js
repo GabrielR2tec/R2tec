@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/logo/r2tec-logo-dark-bg.jpg" alt="R2TEC">
-          <p>Tecnologia, prestação de serviços e venda/locação de equipamentos de informática e infraestrutura para empresas.</p>
+          <img src="images/logo/Logo-PNG-tracada.png" alt="R2TEC">
+          <p>Soluções completas em TI: serviços, infraestrutura e locação de equipamentos para impulsionar o seu negócio.</p>
           <div class="social-row">
             <a href="https://www.instagram.com/r2technologie/" target="_blank" rel="noopener" aria-label="Instagram da R2TEC">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <h5>Contato</h5>
           <ul>
             <li><a href="contato.html">Fale com a equipe</a></li>
-            <li><a href="#" data-quote-trigger>Solicitar orçamento</a></li>
             <li><a href="https://www.instagram.com/r2technologie/" target="_blank" rel="noopener">@r2technologie</a></li>
           </ul>
         </div>
