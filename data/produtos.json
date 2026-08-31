@@ -9,6 +9,7 @@
       },
       "detalhes": "Notebook corporativo com processador Intel Core i7, 16 GB de RAM e SSD de 512 GB. Ideal para ambientes de trabalho que exigem mobilidade e desempenho.",
       "imagem": "images/produtos/Balanca.png",
+      "manual": "https://www.dell.com/support/manuals/pt-br/latitude-notebook",
       "ativo": true,
       "venda": true,
       "locacao": true

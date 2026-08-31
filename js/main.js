@@ -8,7 +8,7 @@
    CONFIGURAÇÃO — altere aqui o número de WhatsApp da empresa
    Formato: código do país + DDD + número, somente dígitos.
    ----------------------------------------------------------------------- */
-window.R2_WHATSAPP_NUMBER = "5585999999999"; // TODO: substituir pelo número real da R2TEC
+window.R2_WHATSAPP_NUMBER = "558584222062"; // TODO: substituir pelo número real da R2TEC
 
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
@@ -298,6 +298,7 @@ function openProductModal(produto) {
         <div class="detail-actions">
           <button type="button" class="btn btn-primary btn-add" data-id="${produto.id}">+ Adicionar ao orçamento</button>
           <button type="button" class="btn btn-outline" data-open-quote-direct="${produto.id}">Solicitar orçamento agora</button>
+          ${produto.manual ? `<a href="${R2Catalog.escapeHtml(produto.manual)}" target="_blank" rel="noopener" class="btn btn-outline">Ver manual do produto</a>` : ""}
         </div>
       </div>
     </div>`;
