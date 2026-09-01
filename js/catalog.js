@@ -37,6 +37,19 @@ const R2Catalog = (function () {
     return src || "";
   }
 
+  // Reúne todas as imagens do produto: a "imagem" (capa) sempre primeiro,
+  // seguida das extras em "imagens" (array opcional), sem repetir.
+  function getGallery(p) {
+    const list = [];
+    if (p.imagem) list.push(p.imagem);
+    if (Array.isArray(p.imagens)) {
+      p.imagens.forEach((img) => {
+        if (img && !list.includes(img)) list.push(img);
+      });
+    }
+    return list;
+  }
+
   function tagsHtml(p) {
     let html = "";
     if (p.venda) html += `<span class="tag tag-venda">Venda</span>`;
@@ -46,10 +59,12 @@ const R2Catalog = (function () {
 
   function mediaHtml(p) {
     const src = fmtImgSrc(p.imagem);
+    const galleryCount = getGallery(p).length;
     return `<div class="product-media">
       <div class="product-tags">${tagsHtml(p)}</div>
       ${src ? `<img src="${src}" alt="${escapeHtml(p.nome)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ""}
       <div class="ph-wrap" style="display:${src ? "none" : "flex"};width:100%;height:100%;align-items:center;justify-content:center;">${PLACEHOLDER_ICON}</div>
+     
     </div>`;
   }
 
@@ -86,5 +101,5 @@ const R2Catalog = (function () {
     container.innerHTML = produtos.map(cardHtml).join("");
   }
 
-  return { load, renderGrid, cardHtml, mediaHtml, fmtImgSrc, escapeHtml, PLACEHOLDER_ICON };
+  return { load, renderGrid, cardHtml, mediaHtml, getGallery, fmtImgSrc, escapeHtml, PLACEHOLDER_ICON };
 })();

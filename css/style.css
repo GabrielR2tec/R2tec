@@ -360,6 +360,14 @@ p{ margin: 0 0 1em; color: var(--muted); }
 .product-media img{ width:100%; height:100%; object-fit:cover; }
 .product-media .ph-icon{ width:64px; height:64px; color:#c3c8d0; }
 .product-tags{ position:absolute; top:10px; left:10px; display:flex; gap:6px; }
+.media-count{
+  position:absolute; bottom:10px; right:10px;
+  display:flex; align-items:center; gap:5px;
+  font-family: var(--f-mono); font-size:.7rem; font-weight:700;
+  background: rgba(11,12,14,.78); color:#fff;
+  padding: 4px 8px; border-radius: 2px;
+}
+.media-count svg{ width:13px; height:13px; }
 .tag{
   font-family: var(--f-mono); font-size:.66rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
   padding: 4px 8px; border-radius: 2px;
@@ -506,7 +514,7 @@ p{ margin: 0 0 1em; color: var(--muted); }
 }
 .modal.open{ opacity:1; pointer-events:auto; }
 .modal-panel{
-  background:#fff; width:100%; max-width: 860px; max-height: 95vh; overflow-y:auto;
+  background:#fff; width:100%; max-width: 860px; max-height: 99vh; overflow-y:auto;
   position:relative;
   transform: translateY(14px) scale(.98);
   transition: transform .25s var(--ease);
@@ -524,10 +532,26 @@ p{ margin: 0 0 1em; color: var(--muted); }
 .product-detail{ display:grid; grid-template-columns: 1fr 1fr; }
 @media (max-width:680px){ .product-detail{ grid-template-columns: 1fr; } }
 .product-detail-media{
-  background: var(--paper-2); display:flex; align-items:center; justify-content:center; min-height: 280px; overflow:hidden;
+  background:#fff; display:contents; align-items:center; justify-content:center; min-height: 280px; overflow:hidden;
 }
-.product-detail-media img{ width:100%; height:100%; object-fit:cover; }
+.product-detail-media img{ width:100%; height:70%; object-fit:cover; }
 .product-detail-media svg{ width:80px; height:80px; color:#c3c8d0; }
+.product-gallery{ display:flex; flex-direction:column; }
+.product-gallery .product-detail-media{ flex:1; }
+.gallery-thumbs{
+  display:flex; gap:8px; padding:10px;
+  background:#fff; border-top:1px solid var(--line-light);
+  overflow-x:auto;
+}
+.gallery-thumb{
+  width:56px; height:56px; flex:none;
+  border:2px solid transparent; padding:0; background: var(--paper-2);
+  overflow:hidden; cursor:pointer; transition: border-color .15s;
+}
+.gallery-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.gallery-thumb.active{ border-color: var(--red); }
+.gallery-thumb:hover{ border-color: var(--muted-2); }
+.gallery-thumb.active:hover{ border-color: var(--red); }
 .product-detail-info{ padding: 40px 40px 40px 34px; }
 @media (max-width:680px){ .product-detail-info{ padding: 30px 26px 34px; } }
 .product-detail-info .product-cat{ font-size:.72rem; }
@@ -545,7 +569,7 @@ p{ margin: 0 0 1em; color: var(--muted); }
 .detail-specs{ margin: 20px 0; padding: 16px 0; border-top:1px solid var(--line-light); }
 .detail-specs dt{ font-family:var(--f-mono); font-size:.68rem; color:var(--muted-2); text-transform:uppercase; letter-spacing:.06em; }
 .detail-specs dd{ margin: 2px 0 12px; font-size:.92rem; }
-.detail-actions{ display:flex; gap:12px; margin-top:-43px; flex-wrap:wrap; }
+.detail-actions{ display:flex; gap:12px; margin-top:-45px; flex-wrap:wrap; }
 
 /* Orçamento modal form */
 .quote-modal .modal-panel{ max-width: 620px; }

@@ -273,13 +273,23 @@ function ensureProductModal() {
 function openProductModal(produto) {
   const modal = document.querySelector(".product-modal");
   const content = modal.querySelector("[data-product-content]");
-  const src = R2Catalog.fmtImgSrc(produto.imagem);
+  const gallery = R2Catalog.getGallery(produto);
+  const mainSrc = R2Catalog.fmtImgSrc(gallery[0] || "");
 
   content.innerHTML = `
     <div class="product-detail">
-      <div class="product-detail-media">
-        ${src ? `<img src="${src}" alt="${R2Catalog.escapeHtml(produto.nome)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ""}
-        <div class="ph-wrap" style="display:${src ? "none" : "flex"};width:100%;height:100%;align-items:center;justify-content:center;">${R2Catalog.PLACEHOLDER_ICON}</div>
+      <div class="product-gallery">
+        <div class="product-detail-media" data-gallery-main>
+          ${mainSrc ? `<img src="${mainSrc}" alt="${R2Catalog.escapeHtml(produto.nome)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ""}
+          <div class="ph-wrap" style="display:${mainSrc ? "none" : "flex"};width:100%;height:100%;align-items:center;justify-content:center;">${R2Catalog.PLACEHOLDER_ICON}</div>
+        </div>
+        ${gallery.length > 1 ? `
+        <div class="gallery-thumbs" data-gallery-thumbs>
+          ${gallery.map((img, i) => `
+            <button type="button" class="gallery-thumb ${i === 0 ? "active" : ""}" data-gallery-src="${R2Catalog.escapeHtml(R2Catalog.fmtImgSrc(img))}">
+              <img src="${R2Catalog.fmtImgSrc(img)}" alt="${R2Catalog.escapeHtml(produto.nome)} — foto ${i + 1}" loading="lazy">
+            </button>`).join("")}
+        </div>` : ""}
       </div>
       <div class="product-detail-info">
         <span class="product-cat">${R2Catalog.escapeHtml(produto.categoria.nome)}</span>
@@ -302,6 +312,26 @@ function openProductModal(produto) {
         </div>
       </div>
     </div>`;
+
+  content.querySelectorAll("[data-gallery-src]").forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const src = thumb.dataset.gallerySrc;
+      const mainWrap = content.querySelector("[data-gallery-main]");
+      let img = mainWrap.querySelector("img");
+      const phWrap = mainWrap.querySelector(".ph-wrap");
+      if (!img) {
+        img = document.createElement("img");
+        img.alt = R2Catalog.escapeHtml(produto.nome);
+        img.onerror = () => { img.style.display = "none"; phWrap.style.display = "flex"; };
+        mainWrap.insertBefore(img, phWrap);
+      }
+      img.style.display = "";
+      phWrap.style.display = "none";
+      img.src = src;
+      content.querySelectorAll("[data-gallery-src]").forEach((t) => t.classList.remove("active"));
+      thumb.classList.add("active");
+    });
+  });
 
   content.querySelector("[data-open-quote-direct]").addEventListener("click", async () => {
     const produtos = await R2Catalog.load();

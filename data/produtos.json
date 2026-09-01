@@ -9,6 +9,7 @@
       },
       "detalhes": "Notebook corporativo com processador Intel Core i7, 16 GB de RAM e SSD de 512 GB. Ideal para ambientes de trabalho que exigem mobilidade e desempenho.",
       "imagem": "images/produtos/Balanca.png",
+      "imagens": ["images/produtos/Balanca.png", "images/produtos/ponto.png"],
       "manual": "https://www.dell.com/support/manuals/pt-br/latitude-notebook",
       "ativo": true,
       "venda": true,
@@ -29,13 +30,14 @@
     },
     {
       "id": 3,
-      "nome": "Servidor HP ProLiant",
+      "nome": "Leitor de Código de Barras Zebra DS2208 QR Code 2D",
       "categoria": {
-        "nome": "Servidores",
-        "subcategoria": "Servidores Rack"
+        "nome": "Leitores",
+        "subcategoria": "Leitor de Código de Barras"
       },
-      "detalhes": "Servidor para aplicações corporativas, armazenamento e gerenciamento de redes, com suporte a virtualização e alta disponibilidade.",
-      "imagem": "images/produtos/servidor-hp-proliant.jpg",
+      "detalhes": "Dimensões: 16,5 cm x 6,6 cm x 9,9 cm (Altura x Largura x Profundidade)",
+      "imagem": "images/produtos/ID 03.png",
+      "imagens": ["images/produtos/ID 03 - 02.png", "images/produtos/ID 03.png"],
       "ativo": true,
       "venda": true,
       "locacao": true
