@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="index.html">Home</a></li>
             <li><a href="produtos.html">Produtos</a></li>
             <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="suporte.html">Suporte</a></li>
             <li><a href="sobre.html">Sobre a empresa</a></li>
             <li><a href="contato.html">Contato</a></li>
           </ul>

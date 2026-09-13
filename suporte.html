@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suporte — R2TEC</title>
+<meta name="description" content="Central de suporte R2TEC: portal do cliente, acesso remoto e downloads de softwares e drivers.">
+<link rel="icon" href="images/logo/Logo PNG - Copia.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="images/logo/Logo-PNG-tracada.png" alt="R2TEC — Inovação e Tecnologia">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="suporte.html" class="active">Suporte</a>
+      <!--<a href="sobre.html">Sobre</a>-->
+      <a href="contato.html">Contato</a>
+      <a href="#" class="btn btn-primary btn-sm nav-cta" data-quote-trigger>Solicitar orçamento</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="icon-btn" data-cart-open aria-label="Abrir orçamento">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 3H2"/></svg>
+        <span class="cart-count" data-empty="true">0</span>
+      </button>
+      <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="document.getElementById('mainNav').classList.toggle('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Suporte</div>
+      <h1>Central de suporte</h1>
+      <p>Fale com a nossa equipe, acesse ferramentas de suporte remoto ou baixe softwares e drivers dos equipamentos.</p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <div class="grid grid-3" id="supportGrid"></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div>
+        <h2>Não encontrou o que precisa?</h2>
+        <p>Fale diretamente com a nossa equipe pelo WhatsApp ou pelos canais de contato.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="#" class="btn btn-primary" data-quote-trigger>Solicitar orçamento</a>
+        <a href="contato.html" class="btn btn-outline">Fale conosco</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="footer"></footer>
+<div id="waFab"></div>
+
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/main.js"></script>
+<script src="js/footer.js"></script>
+<script>
+/* -----------------------------------------------------------------------
+   CONFIGURAÇÃO — links externos do suporte. Ajuste aqui quando tiver
+   os endereços definitivos do portal de chamados e do portal de drivers.
+   ----------------------------------------------------------------------- */
+const R2_SUPPORT_PORTAL_URL = "https://r2tec.suport.cloud"; // TODO: portal de chamados/tickets real
+const R2_DRIVERS_PORTAL_URL = "https://drive.google.com/drive/folders/1xSqfS6JjTcEr7UTaE58jnpJ_JXLD13uC?usp=drive_link"; // TODO: portal de softwares/drivers real
+
+const supportIcons = {
+  portal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>',
+  remoto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="13" rx="1"/><path d="M8 21h8M12 17v4"/><path d="M12 8v4l3 2"/></svg>',
+  drivers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>',
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+};
+
+const waLink = (msg) => `https://wa.me/${window.R2_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+const supportCards = [
+  {
+    icon: "portal",
+    titulo: "Portal do cliente",
+    desc: "Canais diretos para falar com a nossa equipe e abrir um chamado de suporte.",
+    links: [
+      { texto: "Falar no WhatsApp", href: waLink("Olá, preciso de suporte técnico."), blank: true },
+      { texto: "Abrir chamado no portal de suporte", href: R2_SUPPORT_PORTAL_URL, blank: true },
+      { texto: "Enviar e-mail para o suporte", href: "https://mail.google.com/mail/?view=cm&fs=1&to=atendimento@r2tec.com.br&su=Contato%20pelo%20site&body=Olá,%20gostaria%20de%20mais%20informações.", blank: true },
+    ],
+  },
+  {
+    icon: "remoto",
+    titulo: "Acesso remoto",
+    desc: "Baixe a ferramenta indicada pela nossa equipe para atendimento remoto.",
+    links: [
+      { texto: "Baixar AnyDesk", href: "https://anydesk.com/pt/downloads", blank: true },
+      { texto: "Baixar TeamViewer", href: "https://www.teamviewer.com/pt-br/download/", blank: true },
+    ],
+    nota: "Após instalar, informe à nossa equipe o código de acesso gerado pelo aplicativo.",
+  },
+  {
+    icon: "drivers",
+    titulo: "Softwares e drivers",
+    desc: "Acesse o portal de downloads para instalar softwares e drivers dos equipamentos R2TEC.",
+    links: [
+      { texto: "Acessar portal de downloads", href: R2_DRIVERS_PORTAL_URL, blank: true },
+    ],
+  },
+];
+
+document.getElementById("supportGrid").innerHTML = supportCards.map(c => `
+  <div class="card service-card support-card">
+    <div class="service-icon">${supportIcons[c.icon]}</div>
+    <h3>${c.titulo}</h3>
+    <p>${c.desc}</p>
+    <ul class="support-links">
+      ${c.links.map(l => `
+        <li><a href="${l.href}" ${l.blank ? 'target="_blank" rel="noopener"' : ""}>
+          <span>${l.texto}</span>${supportIcons.arrow}
+        </a></li>`).join("")}
+    </ul>
+    ${c.nota ? `<p class="support-note">${c.nota}</p>` : ""}
+  </div>
+`).join("");
+</script>
+</body>
+</html>

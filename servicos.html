@@ -22,7 +22,8 @@
       <a href="index.html">Home</a>
       <a href="produtos.html">Produtos</a>
       <a href="servicos.html" class="active">Serviços</a>
-      <a href="sobre.html">Sobre</a>
+      <a href="suporte.html">Suporte</a>
+      <!--<a href="sobre.html">Sobre</a>-->
       <a href="contato.html">Contato</a>
       <a href="#" class="btn btn-primary btn-sm nav-cta" data-quote-trigger>Solicitar orçamento</a>
     </nav>
@@ -49,7 +50,7 @@
 
   <section class="section--tight">
     <div class="container">
-      <div id="servicesList"></div>
+      <div class="grid grid-3 accordion" id="servicesList"></div>
     </div>
   </section>
 
@@ -137,16 +138,34 @@ const servicos = [
   },
 ];
 
-document.getElementById('servicesList').innerHTML = servicos.map(s => `
-  <div class="service-detail">
-    <div class="service-icon">${icons[s.icon]}</div>
-    <div>
-      <h3>${s.nome}</h3>
-      <p>${s.desc}</p>
-      <ul>${s.itens.map(i => `<li>${i}</li>`).join('')}</ul>
+document.getElementById('servicesList').innerHTML = servicos.map((s, i) => `
+  <div class="acc-item card" data-acc-item>
+    <button type="button" class="acc-header" data-acc-toggle aria-expanded="false">
+      <span class="service-icon">${icons[s.icon]}</span>
+      <span class="acc-title">${s.nome}</span>
+      <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="acc-panel">
+      <div class="acc-panel-inner">
+        <div class="acc-panel-body">
+          <p>${s.desc}</p>
+          <ul>${s.itens.map(i => `<li>${i}</li>`).join('')}</ul>
+          <a href="https://wa.me/${window.R2_WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá, gostaria de solicitar um orçamento para o serviço de ' + s.nome + '.')}"
+             target="_blank" rel="noopener" class="btn btn-primary">Solicitar orçamento</a>
+        </div>
+      </div>
     </div>
   </div>
 `).join('');
+
+document.getElementById('servicesList').querySelectorAll('[data-acc-toggle]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('[data-acc-item]');
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
 </script>
 </body>
 </html>
